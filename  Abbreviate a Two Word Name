@@ -1,0 +1,23 @@
+"""
+Write a function to convert a name into initials. 
+This kata strictly takes two words with one space in between them.
+The output should be two capital letters with a dot separating them.
+
+It should look like this:
+
+Sam Harris => S.H
+patrick feeney => P.F
+"""
+
+def abbrev_name(name):
+    
+    count_word = name.split()   ## Splits the string by words
+    abrev = []                  ## Creates empty object
+
+    for count, value in enumerate(count_word):  ## Enumerate/iterates through the 'count_word' list
+        abrev.append(count_word[count][0])      ## Adds the first index of each word in count_word to the object
+                                                ## abrev. So "Sam Harris" ==> [S,H]
+    
+    return abrev[0].upper() + '.' + abrev[1].upper() 
+    
+abbrev_name("Sam Harris") # ==> S.H
